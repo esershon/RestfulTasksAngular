@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 
-mongoose.connect('mongodb://localhost:27017/restfulTaskAPI');
+mongoose.connect('mongodb://localhost:27017/restfulTaskAngular');
 
 const TaskSchema = new mongoose.Schema({
     title: {type: String, required: [true, "A title"], minlength: [2, "Title must be at least 2 characters long"]},

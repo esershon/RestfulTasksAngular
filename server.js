@@ -1,7 +1,7 @@
 //GRAB THE DEPENDENCIES
 const express = require("express");
 const bodyParser = require('body-parser');
-// const mongoose = require("mongoose");
+// const mongoose = require("mongoose"); //this is in the models file
 
 const app = express();
 
