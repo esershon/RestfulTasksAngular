@@ -3,7 +3,7 @@ var Task = require('./models');
 module.exports = {
     getalltasks:(req, res)=>{
         Task.find({})
-            .then(tasks=>res.json(tasks))
+            .then(tasks=>res.json({"tasks":tasks}))
             .catch(err =>res.json(err))
     },
 
