@@ -3,12 +3,15 @@
   <h1>
     Restful Tasks API!
   </h1>
+  <button (click)="GetAllTasks()">Get All Tasks</button>
   <h1>All the Tasks: </h1>
     <p *ngFor="let task of tasks; let i = index">
       {{tasks[i]["title"]}}
+      <button (click)="SaveCurrentTask(i)">Show</button>
     </p>
-  <h1>The Third Task:</h1>
-  <p>{{tasks["2"]["title"]}}</p>
+  <h1>Current Task:</h1>
+  <p>Description: {{currenttask["description"]}}</p>
+  <p>Completed: {{currenttask["completed"]}}</p>
 
 </div>
 

@@ -11,18 +11,23 @@ import { HttpService } from './http.service';
 // Implement OnInit.
 export class AppComponent implements OnInit {
   tasks = [];
+  currenttask={};
   constructor(private _httpService: HttpService) { }
   // ngOnInit will run when the component is initialized, after the constructor method.
   ngOnInit() {
-    this.getTasksFromService();
   }
 
-  getTasksFromService() {
+  GetAllTasks() {
     let observable = this._httpService.getTasks();
     observable.subscribe(data => {
       console.log("got the tasks again", data);
       this.tasks = data["tasks"];
       console.log(this.tasks["0"]["title"]);
     })
+  }
+
+  SaveCurrentTask(i: Number){
+    let index = String(i);
+    this.currenttask=this.tasks[index];
   }
 }
